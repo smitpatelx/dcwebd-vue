@@ -5,10 +5,24 @@ import AppFooter from './components/Footer.vue';
 import Home from './view/Home.vue';
 import About from './view/About.vue';
 import ERROR from './view/ERROR.vue';
-import Todo from './view/Todo.vue';
+import HandOuts from './view/Handouts.vue';
+import Attendance from './view/Attendance.vue';
+import Assignments from './view/Assignments.vue';
+import AssignmentsNav from './components/AssignmentsNav.vue';
+import Login from './view/Login.vue';
+import Logout from './view/Logout.vue';
+import Dashboard from './view/Dashboard.vue';
+import AdminNav from './components/AdminNavigations.vue';
+import AdminAttendance from './view/admin/AdminAttendance.vue';
+import AdminSecret from './view/admin/AdminSecret.vue';
+import AdminProfile from './view/admin/AdminProfile.vue';
+import AdminUsers from './view/admin/AdminUsers.vue';
+import AdminStudents from './view/admin/AdminStudents.vue';
+import store from './store';
 
 Vue.use(Router);
 var publicPath = process.env.BASE_URL;
+
 let router = new Router({
   base: publicPath,
   linkExactActiveClass: 'active',
@@ -33,12 +47,111 @@ let router = new Router({
       }
     },
     {
-      path: '/todo',
-      name: 'todo',
+      path: '/assignments/:lab',
       components: {
         header: AppHeader,
-        default: Todo,
+        default: Assignments
+      }
+    },
+    {
+      path: '/assignments',
+      redirect: '/assignments/lab1'
+    },
+    {
+      path: '/handouts',
+      name: 'handouts',
+      components: {
+        header: AppHeader,
+        default: HandOuts,
         footer: AppFooter
+      }
+    },
+    {
+      path: '/attendance',
+      name: 'attendance',
+      components: {
+        header: AppHeader,
+        default: Attendance,
+        footer: AppFooter
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      components: {
+        header: AppHeader,
+        default: Login,
+        footer: AppFooter
+      },
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/dashboard',
+      components: {
+        header: AppHeader,
+        default: Dashboard
+      },
+      children: [
+        {
+          path: '/',
+          name: 'dashboard',
+          components: {
+            navigation: AdminNav,
+            default: AdminAttendance
+          }
+        },
+        {
+          path: 'students',
+          components: {
+            navigation: AdminNav,
+            default: AdminStudents
+          }
+        },
+        {
+          path: 'users',
+          components: {
+            navigation: AdminNav,
+            default: AdminUsers
+          }
+        },
+        {
+          path: 'profile',
+          components: {
+            navigation: AdminNav,
+            default: AdminProfile
+          }
+        },
+        {
+          path: 'secret',
+          components: {
+            navigation: AdminNav,
+            default: AdminSecret
+          }
+        },
+        {
+          path: '*',
+          components: {
+            navigation: AdminNav,
+            default: ERROR
+          }
+        }
+      ],
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      components: {
+        header: AppHeader,
+        default: Logout,
+        footer: AppFooter
+      },
+      meta: {
+        requiresAuth: true
       }
     },
     {
@@ -50,6 +163,28 @@ let router = new Router({
       }
     }
   ]
+});
+
+router.beforeEach(function(to, from, next) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.getters.loggedIn) {
+      next({
+        path: '/login'
+      });
+    } else {
+      next();
+    }
+  } else if (to.matched.some(record => record.meta.requiresGuest)) {
+    if (store.getters.loggedIn) {
+      next({
+        path: '/dashboard'
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
