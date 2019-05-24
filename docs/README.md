@@ -9,7 +9,7 @@ pageClass: home-page-class
 
 <p class="description">PHP Web development</p>
 
-<p class="action"><a href="/assignments/" class="nav-link action-button">Get Started →</a></p>
+<p class="action"><a href="/docs/assignments/" class="nav-link action-button">Get Started →</a></p>
 
 ### About
 

@@ -14,6 +14,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Assignments', link: '/assignments/' },
+      { text: 'Main Website', link: '/../' },
       { text: 'Developer', link: 'https://netdevv.com' }
     ],
     sidebar: [
