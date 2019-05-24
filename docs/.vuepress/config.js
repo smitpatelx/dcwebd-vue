@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/dist/',
+  base: '/docs/',
   configureWebpack: {
     resolve: {
       alias: {
