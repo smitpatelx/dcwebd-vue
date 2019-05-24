@@ -1,3 +1,19 @@
-# Welcome to PHP Labs
+---
+sidebar: false
+pageClass: home-page-class
+---
 
-This website contains all labs documentation related to WEBD-2201
+<img src="/assets/phpLogo.png" style="height:40vh;"/>
+
+<h1>PhpPress</h1>
+
+<p class="description">PHP Web development</p>
+
+<p class="action"><a href="/assignments/" class="nav-link action-button">Get Started →</a></p>
+
+### About
+
+Version: 1.0.2 <br/>
+Stack: `Vue` `Markdown` `Stylus` <br/>
+Developer Team : [NETDEVV](https://netdevv.com) <br/>
+Contact : [services@netdevv.com](mailto:services@netdevv.com)

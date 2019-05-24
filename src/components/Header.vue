@@ -13,7 +13,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat to="/">HOME</v-btn>
         <v-btn flat to="/handouts">Hand Outs</v-btn>
-        <v-btn flat to="/assignments">Assignments</v-btn>
+        <v-btn flat href="/dist">Documents</v-btn>
         <v-btn flat to="/attendance">Attendance</v-btn>
         <v-btn flat to="/dashboard" v-if="loggedIn">Dashboard</v-btn>
 

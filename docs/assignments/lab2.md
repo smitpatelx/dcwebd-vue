@@ -10,7 +10,7 @@ Important: as was mentioned in lecture, be sure to make a paper sketch of what y
 
 ## Due Date and Marking
 
-The due date for Lab 1 is found on the [Important Dates](http://opentech.durhamcollege.org/pufferd/webd2201/dates.php) page and in DC Connect. This means that you must have published your website into your development folder on the opentech server and have submitted a clickable HTML link to your website on the opentech server in the Lab 1 assessment dropbox comment section in DC Connect (see "Submission" section).
+The due date for Lab 1 is found on the [Important Dates](http://opentech.durhamcollege.org/pufferd/webd2201/importantdates) page and in DC Connect. This means that you must have published your website into your development folder on the opentech server and have submitted a clickable HTML link to your website on the opentech server in the Lab 1 assessment dropbox comment section in DC Connect (see "Submission" section).
 
 You will be given a mark out of twenty (20). You will be told of the reasons for any loss of marks, these points are to be used as constructive criticism (i.e. fix the problems as a practice for the term tests).
 
@@ -23,13 +23,14 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 
 - Additionally, each page is to have `<!-- HTML Comments -->` giving your name, the file name, the date the file was created and a brief description of the page's purpose. Example:
 
-
-        <!--
-            Name: Bill Smith
-            File: lab2.html
-            Date: 22 May 2019
-            This is the Lab 2 page for Web Development - Fundamentals (WEBD2201)
-        -->
+```html
+<!--
+    Name: Bill Smith
+    File: lab2.html
+    Date: 22 May 2019
+    This is the Lab 2 page for Web Development - Fundamentals (WEBD2201)
+-->
+```
 
 - The layout on your pages should include at the top of your pages a table row with at least two cells: a cell that places your logo in the top-left hand
   corner of the page, and a cell with a banner (`<h1>` tag element) in the cell beside it.
@@ -158,3 +159,11 @@ Outcomes</td>
 <td style="text-align:center;"><b>/5</b></td>
 </tr>
 </table>
+
+## Submission
+
+Publish your pages on the opentech server and submit the URL of your index page as a clickable link in the comment section of the "**Assignment 2**" drop box in DC Connect. If you do not submit something into DC Connect, your professor will assume you did not complete the assignment, and the late penalties will apply (including 0/20 if the link was not submitted within the **72 hours** late period). The onus is on you to ensure your lab instructor knows that you have work to be assessed.
+
+::: warning
+Do not mail or attach your files themselves into DC Connect. They must be published onto the opentech server.
+:::

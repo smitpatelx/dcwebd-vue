@@ -12,7 +12,7 @@ You can create your own images, or simply "borrow" them from the Web or other so
 
 ## Due Date and Marking
 
-The due date for Lab 1 is found on the [Important Dates](http://opentech.durhamcollege.org/pufferd/webd2201/dates.php) page and in DC Connect. This means that you must have published your website into your development folder on the opentech server and have submitted a clickable HTML link to your website on the opentech server in the Lab 1 assessment dropbox comment section in DC Connect (see "Submission" section).
+The due date for Lab 1 is found on the [Important Dates](http://opentech.durhamcollege.org/pufferd/webd2201/importantdates) page and in DC Connect. This means that you must have published your website into your development folder on the opentech server and have submitted a clickable HTML link to your website on the opentech server in the Lab 1 assessment dropbox comment section in DC Connect (see "Submission" section).
 
 You will be given a mark out of twenty (20). You will be told of the reasons for any loss of marks, these points are to be used as constructive criticism (i.e. fix the problems as a practice for the term tests).
 
@@ -24,21 +24,25 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 
 - You must set the background-colour (i.e. `bgcolor` attribute) and text color (i.e. `text` attribute) on the `<body>` tag for each page. Set them to the same colour on both pages (this will give your pages a consistent look and feel, making them a site).
 
-        <body style="background=#0000; color=#fff;">
-            <!-- Page Content -->
-        </body>
+```html
+<body style="background=#0000; color=#fff;">
+  <!-- Page Content -->
+</body>
+```
 
 - Each page (i.e. **_index.html_** and **_lab1.html_**) should have a relative hypertext link to the other at the top of the page (it can be placed underneath the `<h1>` tag created above).
 
 - Any images used on your pages must exist in an images sub-directory, relative to your working directory.
 
+```javascript
         .webd2201/
         ├─ index.html
         ├─ lab1.html
         ├─ images/
            └─ background.jpg
+```
 
-* **_In addition to the title, logo image, header and link, your index.html page must satisfy the following:_**
+- **_In addition to the title, logo image, header and link, your index.html page must satisfy the following:_**
 
   1. Include a detailed paragraph explaining what the purpose of the site is (i.e. it was created as course requirement for webd2201). The course code should be a link to the course web server [http://opentech.durhamcollege.org/pufferd/webd2201](http://opentech.durhamcollege.org/pufferd/webd2201). NOTE: EACH and EVERY web page you create in this course will REQUIRE a description paragraph.
 
@@ -46,7 +50,7 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 
   3. Finally, you are to incorporate the Durham College logo as an image on your index.html page, this image should also act as a link to the Durham College website (this can be achieved by placing `<a>` tags around an `<img>` element on your page).
 
-* In addition to the title, your logo image, header and link, your lab1.html page must satisfy the following:
+- In addition to the title, your logo image, header and link, your lab1.html page must satisfy the following:
 
   - Implement all the HTML elements that will create the page output displayed below.
     N.B. Each section should have an HTML header (`<h3>` tags) as a title to the section, and paragraph (`<p>` tags) explaining which tags and/or special characters were used.
@@ -55,7 +59,7 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 
 ---
 
-[LAB 1 Output](/assets/lab1output.png)
+[LAB 1 Output](../assets/lab1output.png)
 
 > <h1>
 >     Einsteine's Relativity
@@ -82,7 +86,6 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 > <h2>
 > $ 1.00CDN = $ 0.703USD = &pound;0.487 = &euro;0.651 = &yen;82.77
 > </h2>
-> <hr/>
 > <h1>
 >     Code Snippet
 > </h1>
@@ -111,7 +114,6 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 > <h2>
 >     2H<sub>2</sub> + O<sub>2</sub> =&gt; 2H<sub>2</sub>O + heat
 > </h2>
-> <hr/>
 > <h1>
 >     List Example (order important)
 > </h1>
@@ -175,8 +177,7 @@ You will be given a mark out of twenty (20). You will be told of the reasons for
 giving your name, the file name, the date the file was created and a brief description of the page's purpose.<br/>
 Example:<br/>
 
-```
-
+```html
 <!--
     Name: Bill Smith
     File: lab1.html
@@ -184,7 +185,6 @@ Example:<br/>
     This is the Lab 1 page for
     Web Development - Fundamentals (WEBD2201)
 -->
-
 ```
 
 </pre>
@@ -274,16 +274,23 @@ Pay attention to detail, and do not miss any of the tags. <br/><br/>-0.5 per tag
 
 Please include the following lines at the VERY TOP of your `.html` files, this is what is required by the w3c validator to know which standard you are validating your pages to:
 
-```
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-    <body>
-        <!-- Page Content -->
-    </body>
-    </html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <!-- Page Content -->
+  </body>
+</html>
 ```
+
+## Submission
+
+Publish your pages on the opentech server and submit the URL of your index page as a clickable link in the comment section of the "**Assignment 1**" drop box in DC Connect. If you do not submit something into DC Connect, your professor will assume you did not complete the assignment, and the late penalties will apply (including 0/20 if the link was not submitted within the **72 hours** late period). The onus is on you to ensure your lab instructor knows that you have work to be assessed.
+
+::: warning
+Do not mail or attach your files themselves into DC Connect. They must be published onto the opentech server.
+:::

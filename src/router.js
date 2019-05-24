@@ -46,13 +46,13 @@ let router = new Router({
         footer: AppFooter
       }
     },
-    {
-      path: '/assignments/:lab',
-      components: {
-        header: AppHeader,
-        default: Assignments
-      }
-    },
+    // {
+    //   path: '/assignments/:lab',
+    //   components: {
+    //     header: AppHeader,
+    //     default: Assignments
+    //   }
+    // },
     {
       path: '/assignments',
       redirect: '/assignments/lab1'
