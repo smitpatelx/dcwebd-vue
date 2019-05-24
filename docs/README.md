@@ -3,7 +3,7 @@ sidebar: false
 pageClass: home-page-class
 ---
 
-<img src="/assets/phpLogo.png" style="height:40vh;"/>
+<img src="/docs/assets/phpLogo.png" style="height:40vh;"/>
 
 <h1>PhpPress</h1>
 
