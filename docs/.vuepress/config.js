@@ -1,6 +1,6 @@
 module.exports = {
   base: '/docs/',
-  dest: '../public/docs',
+  dest: './public/docs',
   configureWebpack: {
     resolve: {
       alias: {
