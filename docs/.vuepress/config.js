@@ -10,7 +10,7 @@ module.exports = {
   },
   title: 'PhpPress',
   description: 'Learn php the fun way',
-  head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     // logo: '/dcicon.png',
     nav: [
