@@ -1,5 +1,6 @@
 module.exports = {
   base: '/docs/',
+  dest: '../public/docs',
   configureWebpack: {
     resolve: {
       alias: {
@@ -9,12 +10,16 @@ module.exports = {
   },
   title: 'PhpPress',
   description: 'Learn php the fun way',
+  head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
   themeConfig: {
     // logo: '/dcicon.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Assignments', link: '/assignments/' },
-      { text: 'Main Website', link: '/../' },
+      {
+        text: 'Main Site',
+        link: 'https://dcwebd.netlify.com/'
+      },
       { text: 'Developer', link: 'https://netdevv.com' }
     ],
     sidebar: [
