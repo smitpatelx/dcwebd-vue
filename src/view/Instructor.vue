@@ -3,7 +3,7 @@
     <v-layout pa-3 row wrap>
       <v-flex xs12>
         <v-card>
-          <v-img class="white--text" height="200px" :src="publicPath + '/assets/bg_profile.jpg'">
+          <v-img class="white--text" height="200px" :src="publicPath + 'assets/bg_profile.jpg'">
             <v-container fill-height fluid>
               <v-layout fill-height>
                 <v-flex xs12 align-end flexbox>
