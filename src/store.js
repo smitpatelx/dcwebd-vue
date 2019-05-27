@@ -36,10 +36,18 @@ const store = new Vuex.Store({
 
       return new Promise((resolve, reject) => {
         axios
-          .post(apiURL + '/api/login', {
-            username: credentials.username,
-            password: credentials.password
-          })
+          .post(
+            apiURL + 'api/login',
+            {
+              username: credentials.username,
+              password: credentials.password
+            },
+            {
+              headers: {
+                Accept: 'application/json'
+              }
+            }
+          )
           .then(val => {
             const token = val.data.access_token;
             VueCookies.set('access-token', token);
