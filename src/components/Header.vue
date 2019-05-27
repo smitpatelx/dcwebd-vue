@@ -63,7 +63,12 @@
     >
       <v-layout column justify-space-between fill-height>
         <v-list class="pt-0" dense>
-          <v-list-tile v-for="item in items" :key="item.title" :to="item.router">
+          <v-list-tile
+            v-for="item in items"
+            :key="item.title"
+            :to="item.router ? item.router : ''"
+            :href="item.href ? item.href : ''"
+          >
             <v-list-tile-action>
               <v-icon class="teal--text text--darken-2">{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -105,22 +110,6 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       drawer: false,
-      items: [
-        { title: "Home", icon: "dashboard", router: "/" },
-        { title: "Login", icon: "check_box", router: "/login" },
-        { title: "Hand Outs", icon: "book", router: "/handouts" },
-        { title: "Dashboard", icon: "dashboard", router: "/dashboard" },
-        {
-          title: "Assignments",
-          icon: "assignments",
-          router: "/assignments"
-        },
-        {
-          title: "Attendance",
-          icon: "assignment_turned_in",
-          router: "/attendance"
-        }
-      ],
       more: [
         { title: "Instructors", icon: "bubble_chart", router: "/instructors" },
         { title: "Software", icon: "cloud_download", router: "/software" },
@@ -150,6 +139,44 @@ export default {
         };
       }
       return val;
+    },
+    items() {
+      var items;
+      if (this.$store.getters.loggedIn) {
+        items = [
+          { title: "Home", icon: "fas fa-home", router: "/" },
+          { title: "Logout", icon: "fas fa-logout_alt", router: "/logout" },
+          { title: "Hand Outs", icon: "book", router: "/handouts" },
+          { title: "Dashboard", icon: "dashboard", router: "/dashboard" },
+          {
+            title: "Assignments",
+            icon: "assignments",
+            href: "/docs"
+          },
+          {
+            title: "Attendance",
+            icon: "assignment_turned_in",
+            router: "/attendance"
+          }
+        ];
+      } else {
+        items = [
+          { title: "Home", icon: "fas fa-home", router: "/" },
+          { title: "Login", icon: "check_box", router: "/login" },
+          { title: "Hand Outs", icon: "book", router: "/handouts" },
+          {
+            title: "Assignments",
+            icon: "assignments",
+            href: "/docs"
+          },
+          {
+            title: "Attendance",
+            icon: "assignment_turned_in",
+            router: "/attendance"
+          }
+        ];
+      }
+      return items;
     }
   },
   methods: {},
