@@ -91,7 +91,8 @@ export default {
         v => (v && v == this.correctSecret) || "Secret word is incorrect"
       ],
       studentNumbers: null,
-      correctSecret: "secret"
+      correctSecret: "secret",
+      ipaddress: []
     };
   },
   methods: {
@@ -103,7 +104,7 @@ export default {
             last_name: this.lastName,
             secret: this.secretWord,
             student_number: this.studentNumber,
-            ipaddress: "192.168.0.1"
+            ipaddress: this.ipaddress[0]
           })
           .then(data => {
             this.showError = true;
@@ -124,6 +125,30 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+    },
+    getIp() {
+      var ip = false;
+      window.RTCPeerConnection =
+        window.RTCPeerConnection ||
+        window.mozRTCPeerConnection ||
+        window.webkitRTCPeerConnection ||
+        false;
+
+      if (window.RTCPeerConnection) {
+        ip = [];
+        var pc = new RTCPeerConnection({ iceServers: [] }),
+          noop = function() {};
+        pc.createDataChannel("");
+        pc.createOffer(pc.setLocalDescription.bind(pc), noop);
+
+        pc.onicecandidate = function(event) {
+          if (event && event.candidate && event.candidate.candidate) {
+            var s = event.candidate.candidate.split("\n");
+            ip.push(s[0].split(" ")[4]);
+          }
+        };
+      }
+      this.ipaddress = ip;
     }
   },
   computed: {
@@ -145,6 +170,7 @@ export default {
     axios.get(this.apiURL + "api/secret").then(data => {
       this.correctSecret = data.data.secret;
     });
+    this.getIp();
   }
 };
 </script>

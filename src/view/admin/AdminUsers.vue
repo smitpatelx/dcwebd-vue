@@ -85,7 +85,7 @@
           label="Find by name or email"
           type="text"
           class="teal--text pt-4"
-          @click:append-outer="getallUsers & (loading = !loading)"
+          @click:append-outer="getallUsers(); (loading = !loading)"
           @click:clear="search = ''"
           @keyup.esc="search = ''"
           color="teal"

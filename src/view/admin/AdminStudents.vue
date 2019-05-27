@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height class="px-2 py-0">
+  <v-container fluid class="px-2 py-0">
     <v-layout align-start justify-center row fill-height class="py-0">
       <v-dialog v-model="dialog.default" persistent max-width="600px">
         <v-card class="text-xs-center">
@@ -76,7 +76,7 @@
           label="Find by any value"
           type="text"
           class="teal--text pt-4"
-          @click:append-outer="getallStudents & (loading = !loading)"
+          @click:append-outer="getallStudents(); (loading = !loading)"
           @click:clear="search = ''"
           @keyup.esc="search = ''"
           color="teal"
@@ -356,7 +356,6 @@ export default {
   },
   created() {
     this.getallStudents();
-    console.log(this.ipaddress);
   },
   filters: {
     fDate: function(value) {
