@@ -7,7 +7,7 @@ import About from './view/About.vue';
 import ERROR from './view/ERROR.vue';
 import HandOuts from './view/Handouts.vue';
 import Attendance from './view/Attendance.vue';
-// import Assignments from './view/Assignments.vue';s
+import Instructor from './view/Instructor.vue';
 // import AssignmentsNav from './components/AssignmentsNav.vue';
 import Login from './view/Login.vue';
 import Logout from './view/Logout.vue';
@@ -46,13 +46,15 @@ let router = new Router({
         footer: AppFooter
       }
     },
-    // {
-    //   path: '/assignments/:lab',
-    //   components: {
-    //     header: AppHeader,
-    //     default: Assignments
-    //   }
-    // },
+    {
+      path: '/instructors',
+      name: 'instructors',
+      components: {
+        header: AppHeader,
+        default: Instructor,
+        footer: AppFooter
+      }
+    },
     {
       path: '/assignments',
       redirect: '/assignments/lab1'
