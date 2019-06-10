@@ -1,5 +1,7 @@
 <template>
-    
+    <div>
+        <p>Softwares</p>
+    </div>
 </template>
 
 <script>
