@@ -1,7 +1,13 @@
 <template>
   <v-container fluid style="height:100vh; overflow:hidden;" pa-0>
     <v-layout align-start justify-center row fill-height pa-0>
-      <v-flex md4 sm12 class="teal--text text--darken-4" pa-5>
+      <v-flex
+        md4
+        sm12
+        class="teal--text text--darken-4"
+        pa-5
+        style="box-shadow: 10px 0px 17px -12px rgba(0,0,0,0.75);height:100vh;"
+      >
         <v-img width="100" class="ml-4 login-dc-logo" :src="publicPath+'assets/dc_logo.png'">
           <div class="fill-height"></div>
         </v-img>
@@ -66,10 +72,9 @@
         </div>
       </v-flex>
       <v-flex md8 sm12 class="white--text text--darken-2 hidden-sm-and-down">
-        <v-img :src="publicPath+'assets/login-2.svg'" aspect-ratio="1.4">
+        <v-img :src="publicPath+'assets/login-3.svg'" aspect-ratio="1.7" style="height:100vh;">
           <div class="fill-height"></div>
         </v-img>
-        <!-- <v-parallax :src="publicPath+'assets/login-2.svg'"></v-parallax> -->
       </v-flex>
     </v-layout>
     <v-snackbar :color="snackbarClass" v-model="showError" bottom multi-line :timeout="6000">
