@@ -50,7 +50,7 @@
               class="white--text btn-custom"
               @click="submit"
             >Login</v-btn>
-            <v-btn color="#14cea5b5" class="white--text btn-custom" @click="reset">Reset Form</v-btn>
+            <v-btn color="#14cea5b5" class="white--text btn-custom" @click="reset">Reset</v-btn>
           </div>
         </v-form>
         <div class="pl-4 mt-4 pt-4 grey--text text--lighten-1">
