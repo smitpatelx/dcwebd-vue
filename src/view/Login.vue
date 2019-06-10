@@ -28,7 +28,7 @@
             placeholder="yourname@dcmail.com"
             dont-fill-mask-blanks
             single-line
-            color="grey lighten-1 grey--text text--lighten-1"
+            color="#14cea5"
             type="text"
           ></v-text-field>
           <v-text-field
@@ -40,7 +40,7 @@
             required
             single-line
             dont-fill-mask-blanks
-            color="grey lighten-1 grey--text text--lighten-1"
+            color="#14cea5"
             outline
           ></v-text-field>
           <div class="text-md-left text-xs-center">
@@ -149,5 +149,8 @@ export default {
 }
 .login-dc-logo {
   margin-bottom: 6rem;
+}
+.v-input__slot {
+  border-color: #14cea6d2 !important;
 }
 </style>
