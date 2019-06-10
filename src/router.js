@@ -8,7 +8,7 @@ import ERROR from './view/ERROR.vue';
 import HandOuts from './view/Handouts.vue';
 import Attendance from './view/Attendance.vue';
 import Instructor from './view/Instructor.vue';
-// import AssignmentsNav from './components/AssignmentsNav.vue';
+import Software from './view/Software.vue';
 import Login from './view/Login.vue';
 import Logout from './view/Logout.vue';
 import Dashboard from './view/Dashboard.vue';
@@ -56,8 +56,13 @@ let router = new Router({
       }
     },
     {
-      path: '/assignments',
-      redirect: '/assignments/lab1'
+      path: '/software',
+      name: 'software',
+      components: {
+        header: AppHeader,
+        default: Software,
+        footer: AppFooter
+      }
     },
     {
       path: '/handouts',
@@ -81,9 +86,7 @@ let router = new Router({
       path: '/login',
       name: 'login',
       components: {
-        header: AppHeader,
-        default: Login,
-        footer: AppFooter
+        default: Login
       },
       meta: {
         requiresGuest: true
@@ -148,9 +151,7 @@ let router = new Router({
       path: '/logout',
       name: 'logout',
       components: {
-        header: AppHeader,
-        default: Logout,
-        footer: AppFooter
+        default: Logout
       },
       meta: {
         requiresAuth: true

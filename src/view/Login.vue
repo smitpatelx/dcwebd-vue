@@ -1,59 +1,75 @@
 <template>
-  <v-container fluid>
-    <v-layout align-center justify-center row fill-height>
-      <v-flex md6 sm12 class="white--text text--darken-2 hidden-sm-and-down" pa-4>
-        <v-img :src="publicPath+'assets/undraw_collaboration2_8og0.svg'">
+  <v-container fluid style="height:100vh; overflow:hidden;" pa-0>
+    <v-layout align-start justify-center row fill-height pa-0>
+      <v-flex md4 sm12 class="teal--text text--darken-4" pa-5>
+        <v-img width="100" class="ml-4 login-dc-logo" :src="publicPath+'assets/dc_logo.png'">
           <div class="fill-height"></div>
         </v-img>
-      </v-flex>
-      <v-flex md6 sm12 class="teal--text text--darken-4" pa-4>
-        <v-card color="mx-auto elevation-6 rounded">
-          <v-card-title primary-title pa-4 class="text-xs-left">
-            <v-layout align-center justify-center row fill-height>
-              <h3 class="headline mb-0 font-weight-medium teal--text text--darken-4">
-                <v-icon large class="teal--text text--darken-4 pt-4 pr-3">supervised_user_circle</v-icon>
-                <span>Users login</span>
-              </h3>
-            </v-layout>
-            <v-layout align-center justify-center row fill-height>
-              <blockquote class="blockquote subheading teal--text text--darken-4 pt-4">
-                <b>Read privacy policy carefully.</b>
-                <br>Your IP is being tracked.
-                <br>
-              </blockquote>
-            </v-layout>
-          </v-card-title>
 
-          <v-form
-            name="loginForm"
-            ref="form"
-            v-model="valid"
-            lazy-validation
-            class="pa-4 white--text"
-          >
-            <v-text-field
-              v-model.trim="username"
-              :counter="30"
-              :rules="usernameRules"
-              label="Email"
-              required
-              color="white"
-              type="text"
-            ></v-text-field>
-            <v-text-field
-              v-model.trim="password"
-              :counter="15"
-              :rules="passwordRules"
-              label="Password"
-              type="password"
-              required
-            ></v-text-field>
-            <div class="text-xs-center">
-              <v-btn :disabled="!valid" outline color="teal" @click="submit">Login</v-btn>
-              <v-btn color="red" outline @click="reset">Reset Form</v-btn>
-            </div>
-          </v-form>
-        </v-card>
+        <p class="black--text display-1 pl-4 font-weight-black">
+          <v-btn flat icon color="#14cea5" to="/">
+            <v-icon class="pl-2">arrow_back_ios</v-icon>
+          </v-btn>Log in
+          <span class="grey--text title pl-4 font-weight-regular">Sign Up</span>
+        </p>
+        <v-form
+          name="loginForm"
+          ref="form"
+          v-model="valid"
+          lazy-validation
+          class="pa-4 white--text"
+        >
+          <v-text-field
+            v-model.trim="username"
+            :counter="30"
+            :rules="usernameRules"
+            required
+            outline
+            placeholder="yourname@dcmail.com"
+            dont-fill-mask-blanks
+            single-line
+            color="grey lighten-1 grey--text text--lighten-1"
+            type="text"
+          ></v-text-field>
+          <v-text-field
+            v-model.trim="password"
+            :counter="15"
+            :rules="passwordRules"
+            type="password"
+            placeholder="password"
+            required
+            single-line
+            dont-fill-mask-blanks
+            color="grey lighten-1 grey--text text--lighten-1"
+            outline
+          ></v-text-field>
+          <div class="text-md-left text-xs-center">
+            <v-btn
+              :disabled="!valid"
+              color="#14cea5"
+              class="white--text btn-custom"
+              @click="submit"
+            >Login</v-btn>
+            <v-btn color="#14cea5b5" class="white--text btn-custom" @click="reset">Reset Form</v-btn>
+          </div>
+        </v-form>
+        <div class="pl-4 mt-4 pt-4 grey--text text--lighten-1">
+          <p>
+            <v-icon class="px-2 grey--text text--lighten-1">fas fa-shield-alt fa-lg</v-icon>Manage Students Data
+          </p>
+          <p>
+            <v-icon class="px-2 grey--text text--lighten-1">fas fa-bug fa-lg</v-icon>Detect Policy Violation
+          </p>
+          <p>
+            <v-icon class="px-2 grey--text text--lighten-1">far fa-comment-alt fa-lg</v-icon>Join Chat Rooms
+          </p>
+        </div>
+      </v-flex>
+      <v-flex md8 sm12 class="white--text text--darken-2 hidden-sm-and-down">
+        <v-img :src="publicPath+'assets/login-2.svg'" aspect-ratio="1.4">
+          <div class="fill-height"></div>
+        </v-img>
+        <!-- <v-parallax :src="publicPath+'assets/login-2.svg'"></v-parallax> -->
       </v-flex>
     </v-layout>
     <v-snackbar :color="snackbarClass" v-model="showError" bottom multi-line :timeout="6000">
@@ -120,5 +136,18 @@ export default {
 <style>
 .rounded {
   border-radius: 20px;
+}
+.input-field-custom {
+  border: 1.5px solid rgb(117, 117, 117);
+}
+.btn-custom {
+  font-size: 0.9rem;
+  text-transform: none;
+}
+.custom--text {
+  color: #22d187;
+}
+.login-dc-logo {
+  margin-bottom: 6rem;
 }
 </style>

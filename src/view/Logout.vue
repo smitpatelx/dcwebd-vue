@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout align-center justify-center row fill-height style="min-height:80vh;">
-      <span class="display-1 teal--text">LOGGING OUT | WAIT</span>
+      <span class="display-1" style="color:#14cea5;">LOGGING OUT | WAIT</span>
     </v-layout>
     <v-snackbar :color="snackbarClass" v-model="showError" bottom multi-line :timeout="6000">
       {{ errorMessage }}
