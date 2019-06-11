@@ -22,7 +22,12 @@
             <v-btn flat v-on="on">MORE</v-btn>
           </template>
           <v-list>
-            <v-list-tile v-for="(item, index) in more" :key="index" :to="item.router">
+            <v-list-tile
+              v-for="(item, index) in more"
+              :key="index"
+              :to="item.router"
+              :href="item.href"
+            >
               <v-list-tile-action>
                 <v-icon class="teal--text text--darken-2">{{ item.icon }}</v-icon>
               </v-list-tile-action>
@@ -112,7 +117,11 @@ export default {
       drawer: false,
       more: [
         { title: "Instructors", icon: "bubble_chart", router: "/instructors" },
-        { title: "Software", icon: "cloud_download", router: "/software" },
+        {
+          title: "Software",
+          icon: "cloud_download",
+          href: "/docs/softwares"
+        },
         {
           title: "Important Dates",
           icon: "calendar_today",
