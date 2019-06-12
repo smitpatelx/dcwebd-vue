@@ -7,7 +7,7 @@ The server-sided scripting language used for the webd2201 course. Download this 
 - Download from Our Site (32 BIT) [PHP 5.6.25](https://dcapi.netdevv.com/downloads/php-5.6.25-Win32-VC11-x86.zip)
 
 ::: tip Latest PHP version
-Download from PHP.NET [PHP 7.3.6](https://windows.php.net/downloads/releases/php-7.3.6-src.zip)
+Download from PHP.NET [PHP 7.3.6 Thread Safe 64 bit](https://windows.php.net/downloads/releases/php-7.3.6-Win32-VC15-x64.zip) or [PHP 7.3.6 Thread Safe 32 bit](https://windows.php.net/downloads/releases/php-7.3.6-Win32-VC15-x86.zip)
 :::
 
 ## Config Procedure

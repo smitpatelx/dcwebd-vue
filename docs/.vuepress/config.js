@@ -38,6 +38,7 @@ module.exports = {
         ['/assignments/lab6', 'L-6 Self-referring Forms w/ Data Validation']
       ],
       '/softwares/': [
+        ['/softwares/videos', 'Video Guide'],
         ['/softwares/apache', 'Apache Installation'],
         ['/softwares/php', 'Php Installation']
       ]

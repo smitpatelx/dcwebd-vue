@@ -6,3 +6,4 @@ The tools required to edit Web pages/source code, and upload/publish your materi
 
 **[Apache Installation](/softwares/apache.html)**<br>
 **[PHP Installation](/softwares/php.html)**<br>
+**[Video Guides](/softwares/videos.html)**<br>
