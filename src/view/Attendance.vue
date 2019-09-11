@@ -104,7 +104,7 @@ export default {
             last_name: this.lastName,
             secret: this.secretWord,
             student_number: this.studentNumber,
-            ipaddress: this.ipaddress[0]
+            ipaddress: this.ipaddress
           })
           .then(data => {
             this.showError = true;
@@ -127,28 +127,13 @@ export default {
       this.$refs.form.reset();
     },
     getIp() {
-      var ip = false;
-      window.RTCPeerConnection =
-        window.RTCPeerConnection ||
-        window.mozRTCPeerConnection ||
-        window.webkitRTCPeerConnection ||
-        false;
-
-      if (window.RTCPeerConnection) {
-        ip = [];
-        var pc = new RTCPeerConnection({ iceServers: [] }),
-          noop = function() {};
-        pc.createDataChannel("");
-        pc.createOffer(pc.setLocalDescription.bind(pc), noop);
-
-        pc.onicecandidate = function(event) {
-          if (event && event.candidate && event.candidate.candidate) {
-            var s = event.candidate.candidate.split("\n");
-            ip.push(s[0].split(" ")[4]);
-          }
-        };
-      }
-      this.ipaddress = ip;
+      axios.get('https://json.geoiplookup.io/api')
+      .then(res=>{
+        var data2 = res.data;
+        this.ipaddress = data2.ip;
+      }).catch(error=>{
+        console.log('Error getting ip: ',error);
+      });
     }
   },
   computed: {

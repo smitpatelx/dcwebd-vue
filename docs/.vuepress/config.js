@@ -15,18 +15,34 @@ module.exports = {
   },
   title: 'PhpPress',
   description: 'Learn php the fun way',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico'
+    }]
+  ],
   themeConfig: {
     // logo: '/dcicon.png',
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Assignments', link: '/assignments/' },
-      { text: 'Softwares', link: '/softwares/' },
+    nav: [{
+        text: 'Home',
+        link: '/'
+      },
+      {
+        text: 'Assignments',
+        link: '/assignments/'
+      },
+      {
+        text: 'Softwares',
+        link: '/softwares/'
+      },
       {
         text: 'Main Site',
         link: 'https://dcwebd.netlify.com/'
       },
-      { text: 'Developer', link: 'https://netdevv.com' }
+      {
+        text: 'Developer',
+        link: 'https://netdevv.com'
+      }
     ],
     sidebar: {
       '/assignments/': [
@@ -35,7 +51,8 @@ module.exports = {
         ['/assignments/lab3', 'L-3 Formatting and Layout with Styles'],
         ['/assignments/lab4', 'L-4 PHP Chapter Files from Textbook'],
         ['/assignments/lab5', 'L-5 Basic PHP Scripting'],
-        ['/assignments/lab6', 'L-6 Self-referring Forms w/ Data Validation']
+        ['/assignments/lab6', 'L-6 Self-referring Forms w/ Data Validation'],
+        ['/assignments/lab7', 'L-7 Database Intro']
       ],
       '/softwares/': [
         ['/softwares/videos', 'Video Guide'],

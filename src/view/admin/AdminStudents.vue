@@ -200,7 +200,8 @@ export default {
       default: false,
       register: true
     },
-    editId: null
+    editId: null,
+    ipaddress: ''
   }),
 
   methods: {
@@ -213,7 +214,7 @@ export default {
               first_name: this.first_name,
               last_name: this.last_name,
               student_number: this.student_number,
-              ipaddress: this.ipaddress[0]
+              ipaddress: this.ipaddress
             },
             {
               headers: {
@@ -296,7 +297,7 @@ export default {
               first_name: this.first_name,
               last_name: this.last_name,
               student_number: this.student_number,
-              ipaddress: this.ipaddress[0]
+              ipaddress: this.ipaddress
             },
             {
               headers: {
@@ -325,37 +326,23 @@ export default {
       this.dialog.default = true;
       this.dialog.register = true;
       this.$refs.form.reset();
+    },
+    getIpaddress() {
+      axios.get('https://json.geoiplookup.io/api')
+      .then(res=>{
+        var data2 = res.data;
+        this.ipaddress = data2.ip;
+      }).catch(error=>{
+        console.log('Error getting ip: ',error);
+      });
     }
   },
   computed: {
-    ipaddress() {
-      var ip = false;
-      window.RTCPeerConnection =
-        window.RTCPeerConnection ||
-        window.mozRTCPeerConnection ||
-        window.webkitRTCPeerConnection ||
-        false;
 
-      if (window.RTCPeerConnection) {
-        ip = [];
-        var pc = new RTCPeerConnection({ iceServers: [] }),
-          noop = function() {};
-        pc.createDataChannel("");
-        pc.createOffer(pc.setLocalDescription.bind(pc), noop);
-
-        pc.onicecandidate = function(event) {
-          if (event && event.candidate && event.candidate.candidate) {
-            var s = event.candidate.candidate.split("\n");
-            ip.push(s[0].split(" ")[4]);
-          }
-        };
-      }
-
-      return ip;
-    }
   },
   created() {
     this.getallStudents();
+    this.getIpaddress();
   },
   filters: {
     fDate: function(value) {
