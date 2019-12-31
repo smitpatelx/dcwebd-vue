@@ -1,8 +1,14 @@
 module.exports = {
-  plugins: ['@vuepress/pwa', {
-    serviceWorker: true,
-    updatePopup: true
-  }],
+  plugins: {
+    '@vuepress/pwa': {
+      serviceWorker: true,
+      popupComponent: 'MySWUpdatePopup',
+      updatePopup: {
+      message: "New content is available.",
+      buttonText: "Refresh"
+    },
+  }
+  },
   extendMarkdown(md) {
     // md.use(require('markdown-it-task-lists'));
   },
