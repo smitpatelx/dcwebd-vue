@@ -18,6 +18,8 @@ import AdminSecret from './view/admin/AdminSecret.vue';
 import AdminProfile from './view/admin/AdminProfile.vue';
 import AdminUsers from './view/admin/AdminUsers.vue';
 import AdminStudents from './view/admin/AdminStudents.vue';
+import ImportantDates from './view/ImportantDates.vue';
+import Timeline2201 from './view/admin/AdminTimeline2201.vue';
 import store from './store';
 
 Vue.use(Router);
@@ -70,6 +72,15 @@ let router = new Router({
       components: {
         header: AppHeader,
         default: HandOuts,
+        footer: AppFooter
+      }
+    },
+    {
+      path: '/importantdates',
+      name: 'importantdates',
+      components: {
+        header: AppHeader,
+        default: ImportantDates,
         footer: AppFooter
       }
     },
@@ -133,6 +144,13 @@ let router = new Router({
           components: {
             navigation: AdminNav,
             default: AdminSecret
+          }
+        },
+        {
+          path: 'timeline2201',
+          components: {
+            navigation: AdminNav,
+            default: Timeline2201
           }
         },
         {

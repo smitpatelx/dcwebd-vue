@@ -5,7 +5,7 @@
         <v-layout justify-center row wrap>
           <v-btn color="white" flat round to="/">Home</v-btn>
           <v-btn color="white" flat round to="/attendance">Attendance</v-btn>
-          <v-btn color="white" flat round to="/assignments">Assignments</v-btn>
+          <v-btn color="white" flat round href="/docs/assignments">Assignments</v-btn>
           <v-btn
             color="white"
             flat

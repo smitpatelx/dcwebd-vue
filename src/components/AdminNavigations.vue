@@ -52,7 +52,8 @@ export default {
           route: "/dashboard/students"
         },
         { title: "Attendance", icon: "dashboard", route: "/dashboard/" },
-        { title: "Secret", icon: "security", route: "/dashboard/secret" }
+        { title: "Secret", icon: "security", route: "/dashboard/secret" },
+        { title: "Timeline Webd 2201", icon: "query_builder", route: "/dashboard/timeline2201" },
       ],
       right: null
     };
