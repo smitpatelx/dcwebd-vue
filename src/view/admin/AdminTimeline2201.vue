@@ -303,7 +303,6 @@ export default {
 
         },
         editUser(){
-            console.lgo(editId)
         }
     },
     created(){

@@ -187,6 +187,13 @@ let router = new Router({
 });
 
 router.beforeEach(function(to, from, next) {
+  var pageTitle = to.matched.slice().reverse().find(r => r.name);
+  if (pageTitle) {
+    document.title = pageTitle.name.charAt(0).toUpperCase() + pageTitle.name.slice(1) + ' | DC - WEBD2201';
+  } else {
+    document.title = 'DC - WEBD2201';//next() // make sure to always call next()!
+  }
+
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!store.getters.loggedIn) {
       next({
